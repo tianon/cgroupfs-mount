@@ -1,0 +1,18 @@
+Source: cgroup-lite
+Section: admin
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 8),
+Standards-Version: 3.9.4
+
+Package: cgroup-lite
+Architecture: all
+Depends: ${misc:Depends}, mountall (>> 2.48~)
+Conflicts: cgroup-bin (<< 0.38)
+Description: Light-weight package to set up cgroups at system boot
+ Control groups are a kernel mechanism for tracking and imposing
+ limits on resource usage on groups of task.
+ .
+ This package installs an upstart job to set up cgroups when the
+ system boots, without doing any cgroup management or doing any
+ classification of tasks into cgroups.

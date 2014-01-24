@@ -1,0 +1,17 @@
+description "mount available cgroup filesystems"
+author "Serge Hallyn <serge.hallyn@canonical.com>"
+
+start on mounted MOUNTPOINT=/sys/fs/cgroup
+
+pre-start script
+	test -x /bin/cgroups-mount || { stop; exit 0; }
+	test -d /sys/fs/cgroup || { stop; exit 0; }
+	/bin/cgroups-mount
+end script
+
+post-stop script
+	if [ -x /bin/cgroups-umount ]
+	then
+		/bin/cgroups-umount
+	fi
+end script
