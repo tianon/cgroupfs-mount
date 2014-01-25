@@ -1,2 +1,2 @@
-scripts/cgroups-mount bin/
-scripts/cgroups-umount bin/
+cgroupfs-mount bin/
+cgroupfs-umount bin/

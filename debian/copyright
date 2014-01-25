@@ -2,6 +2,7 @@ Format: http://dep.debian.net/deps/dep5
 
 Files: *
 Copyright: 2012 Serge Hallyn <serge.hallyn@ubuntu.com>
+ 2014 Tianon Gravi <admwiggin@gmail.com>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
