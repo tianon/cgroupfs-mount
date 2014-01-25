@@ -1,5 +1,5 @@
 cgroupfs-mount (1.0) UNRELEASED; urgency=low
 
-  * Created new cgroupfs-mount package based on Ubuntu's cgroup-lite.
+  * Created cgroupfs-mount based on Ubuntu's cgroup-lite (Closes: #736649).
 
  -- Tianon Gravi <admwiggin@gmail.com>  Sat, 25 Jan 2014 00:04:20 -0700
