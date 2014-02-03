@@ -31,7 +31,6 @@ fi
 case "$1" in
 	start)
 		test -x /bin/cgroupfs-mount || exit 0
-		test -d /sys/fs/cgroup || exit 0
 		log_begin_msg 'Mounting cgroupfs hierarchy'
 		/bin/cgroupfs-mount
 		log_end_msg $?
@@ -39,7 +38,6 @@ case "$1" in
 
 	stop)
 		test -x /bin/cgroupfs-umount || exit 0
-		test -d /sys/fs/cgroup || exit 0
 		log_begin_msg 'Unmounting cgroupfs hierarchy'
 		/bin/cgroupfs-umount
 		log_end_msg $?
