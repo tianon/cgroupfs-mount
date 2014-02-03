@@ -11,22 +11,17 @@ RUN apt-get update && apt-get install -yq vim-nox --no-install-recommends
 RUN echo 'deb-src http://http.debian.net/debian sid main' >> /etc/apt/sources.list
 
 # need our debian/ directory to compile _this_ package
-ADD . /usr/src/cgroupfs-mount/debian
+ADD . /usr/src/cgroupfs-mount
 WORKDIR /usr/src/cgroupfs-mount
 
 # get all the build deps of _this_ package in a nice repeatable way
 RUN apt-get update && mk-build-deps -irt'apt-get --no-install-recommends -yq' debian/control
 
-# go download and unpack our upstream source
-#RUN uscan --force-download --verbose --download-current-version
-#RUN origtargz --unpack
-
 # tianon is _really_ lazy, and likes a preseeded bash history
 RUN { \
 	echo "DEBFULLNAME='' DEBEMAIL='' dch -i"; \
 	echo 'lintian --ftp-master-rejects'; \
-	echo 'uscan --force-download --verbose --download-current-version'; \
-	echo 'origtargz --unpack && debuild -us -uc --lintian-opts "-EvIL+pedantic"'; \
+	echo 'debuild -us -uc --lintian-opts "-EvIL+pedantic"'; \
 } >> /.bash_history
 
 CMD [ "debuild", "-us", "-uc", "--lintian-opts", "-EvIL+pedantic" ]
