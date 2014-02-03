@@ -1,19 +1,24 @@
 #!/bin/sh
 # Copyright 2011 Canonical, Inc
+#           2014 Tianon Gravi
 # Author: Serge Hallyn <serge.hallyn@canonical.com>
-
+#         Tianon Gravi <admwiggin@gmail.com>
 set -e
 
-# We don't care to move tasks around gratuitously - just umount
-# the cgroups
+# we don't care to move tasks around gratuitously - just umount the cgroups
 
-# If /sys/fs/cgroup is not mounted, we don't bother
+# if /sys/fs/cgroup is not mounted, we don't bother
 mountpoint -q /sys/fs/cgroup || exit 0
 
 cd /sys/fs/cgroup
-for d in `sed -e '1d;s/\([^\t]\)\t.*$/\1/' /proc/cgroups`; do
-    mountpoint -q $d && umount $d
-    [ -d $d ] && rmdir $d
+
+for sys in *; do
+	if mountpoint -q $sys; then
+		umount $sys
+	fi
+	if [ -d $sys ]; then
+		rmdir $sys || true
+	fi
 done
 
 exit 0
