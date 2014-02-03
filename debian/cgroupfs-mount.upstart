@@ -5,12 +5,10 @@ start on mounted MOUNTPOINT=/sys/fs/cgroup
 
 pre-start script
 	test -x /bin/cgroupfs-mount || { stop; exit 0; }
-	test -d /sys/fs/cgroup || { stop; exit 0; }
 	/bin/cgroupfs-mount
 end script
 
 post-stop script
 	test -x /bin/cgroupfs-umount || exit 0
-	test -d /sys/fs/cgroup || exit 0
 	/bin/cgroupfs-umount
 end script
