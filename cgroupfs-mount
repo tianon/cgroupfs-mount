@@ -19,6 +19,11 @@ if [ ! -e /proc/cgroups ]; then
 	exit 0
 fi
 
+# if we don't even have the directory we need, something else must be wrong
+if [ ! -d /sys/fs/cgroup ]; then
+	exit 0
+fi
+
 # mount /sys/fs/cgroup if not already done
 if ! mountpoint -q /sys/fs/cgroup; then
 	mount -t tmpfs -o uid=0,gid=0,mode=0755 cgroup /sys/fs/cgroup

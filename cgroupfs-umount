@@ -7,8 +7,15 @@ set -e
 
 # we don't care to move tasks around gratuitously - just umount the cgroups
 
+# if we don't even have the directory we need, something else must be wrong
+if [ ! -d /sys/fs/cgroup ]; then
+	exit 0
+fi
+
 # if /sys/fs/cgroup is not mounted, we don't bother
-mountpoint -q /sys/fs/cgroup || exit 0
+if ! mountpoint -q /sys/fs/cgroup; then
+	exit 0
+fi
 
 cd /sys/fs/cgroup
 
