@@ -15,6 +15,12 @@ set -e
 
 BASE=$(basename $0)
 
+# Test for systemd and bail (we have to test before sourcing init-functions, or systemd hijacks us)
+# We bail because systemd already mounts cgroups sanely, so we just silently pretend we were successful in mounting them here
+if [ -d /run/systemd/system ]; then
+	exit 0
+fi
+
 # Get lsb functions
 . /lib/lsb/init-functions
 
