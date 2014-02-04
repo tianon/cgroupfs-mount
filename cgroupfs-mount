@@ -32,7 +32,7 @@ fi
 cd /sys/fs/cgroup
 
 # get/mount list of enabled cgroup controllers
-for sys in `awk '!/^#/ { if ($4 == 1) print $1 }' /proc/cgroups`; do
+for sys in $(awk '!/^#/ { if ($4 == 1) print $1 }' /proc/cgroups); do
 	mkdir -p $sys
 	if ! mountpoint -q $sys; then
 		if ! mount -n -t cgroup -o $sys cgroup $sys; then
