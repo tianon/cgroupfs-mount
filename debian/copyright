@@ -1,11 +1,11 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://github.com/tianon/cgroupfs-mount
 Comment: based on Ubuntu's cgroup-lite, with permission:
- http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=734810#20
+         http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=734810#20
 
 Files: *
 Copyright: 2012 Serge Hallyn <serge.hallyn@ubuntu.com>
- 2014 Tianon Gravi <admwiggin@gmail.com>
+           2014 Tianon Gravi <admwiggin@gmail.com>
 License: GPL-3+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
