@@ -4,11 +4,11 @@ author "Serge Hallyn <serge.hallyn@canonical.com>"
 start on mounted MOUNTPOINT=/sys/fs/cgroup
 
 pre-start script
-	test -x /bin/cgroupfs-mount || { stop; exit 0; }
-	/bin/cgroupfs-mount
+	test -x /usr/bin/cgroupfs-mount || { stop; exit 0; }
+	/usr/bin/cgroupfs-mount
 end script
 
 post-stop script
-	test -x /bin/cgroupfs-umount || exit 0
-	/bin/cgroupfs-umount
+	test -x /usr/bin/cgroupfs-umount || exit 0
+	/usr/bin/cgroupfs-umount
 end script

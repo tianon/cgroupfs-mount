@@ -1,2 +1,0 @@
-bin/cgroupfs-mount usr/bin/cgroupfs-mount
-bin/cgroupfs-umount usr/bin/cgroupfs-umount

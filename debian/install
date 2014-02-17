@@ -1,2 +1,2 @@
-cgroupfs-mount bin/
-cgroupfs-umount bin/
+cgroupfs-mount usr/bin/
+cgroupfs-umount usr/bin/

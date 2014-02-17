@@ -36,16 +36,16 @@ fi
 
 case "$1" in
 	start)
-		test -x /bin/cgroupfs-mount || exit 0
+		test -x /usr/bin/cgroupfs-mount || exit 0
 		log_begin_msg 'Mounting cgroupfs hierarchy'
-		/bin/cgroupfs-mount
+		/usr/bin/cgroupfs-mount
 		log_end_msg $?
 		;;
 
 	stop)
-		test -x /bin/cgroupfs-umount || exit 0
+		test -x /usr/bin/cgroupfs-umount || exit 0
 		log_begin_msg 'Unmounting cgroupfs hierarchy'
-		/bin/cgroupfs-umount
+		/usr/bin/cgroupfs-umount
 		log_end_msg $?
 		;;
 
