@@ -1,3 +1,9 @@
+cgroupfs-mount (1.1) UNRELEASED; urgency=medium
+
+  * Added a README, especially to include a section about troubleshooting.
+
+ -- Tianon Gravi <admwiggin@gmail.com>  Fri, 21 Mar 2014 12:57:48 -0600
+
 cgroupfs-mount (1.0) unstable; urgency=low
 
   * Created cgroupfs-mount based on Ubuntu's cgroup-lite (Closes: #736649).
