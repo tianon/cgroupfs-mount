@@ -2,6 +2,7 @@ description "mount available cgroup filesystems"
 author "Serge Hallyn <serge.hallyn@canonical.com>"
 
 start on mounted MOUNTPOINT=/sys/fs/cgroup
+stop on unmounted-remote-filesystems
 
 pre-start script
 	test -x /usr/bin/cgroupfs-mount || { stop; exit 0; }
