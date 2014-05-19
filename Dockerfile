@@ -11,6 +11,4 @@ RUN apt-get update && mk-build-deps -irt'apt-get --no-install-recommends -yq' de
 ADD . /usr/src/cgroupfs-mount
 
 # tianon is _really_ lazy, and likes a preseeded bash history
-RUN echo 'debuild -us -uc --lintian-opts "-EvIL+pedantic"' >> "$HOME/.bash_history"
-
-CMD [ "debuild", "-us", "-uc", "--lintian-opts", "-EvIL+pedantic" ]
+RUN echo 'dpkg-buildpackage -us -uc && lintian -EvIL+pedantic' >> "$HOME/.bash_history"
