@@ -1,10 +1,10 @@
-cgroupfs-mount (1.1) UNRELEASED; urgency=medium
+cgroupfs-mount (1.1) unstable; urgency=medium
 
   * Added a README, especially to include a section about troubleshooting.
   * Added "stop on unmounted-remote-filesystems" to Upstart script to fix hang
     on shutdown issues (Closes: #748710).  Thanks Diane!
 
- -- Tianon Gravi <admwiggin@gmail.com>  Fri, 21 Mar 2014 12:57:48 -0600
+ -- Tianon Gravi <admwiggin@gmail.com>  Wed, 15 Oct 2014 10:19:11 -0600
 
 cgroupfs-mount (1.0) unstable; urgency=low
 
