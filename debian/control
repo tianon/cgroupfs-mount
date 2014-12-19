@@ -10,7 +10,7 @@ Vcs-Browser: https://github.com/tianon/cgroupfs-mount
 
 Package: cgroupfs-mount
 Architecture: all
-Depends: mountall (>> 2.48~), ${misc:Depends}
+Depends: ${misc:Depends}
 Description: Light-weight package to set up cgroupfs mounts
  Control groups are a kernel mechanism for tracking and imposing
  limits on resource usage on groups of tasks.
