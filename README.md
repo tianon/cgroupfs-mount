@@ -1,4 +1,4 @@
-# cgroupfs-mount
+# mount.cgroupfs
 ## Light-weight package to set up cgroupfs mounts
 
 Control groups are a kernel mechanism for tracking and imposing limits on
@@ -12,4 +12,4 @@ doing any classification of tasks into cgroups.
 It is critically important for the proper operation of these scripts that you do
 not manually include any cgroup mount points in `/etc/fstab`.  After commenting
 out any extraneous cgroup entries in `/etc/fstab`, you should either reboot or
-manually umount them and then run `cgroupfs-mount` again.
+manually umount them and then run `mount.cgroupfs` again.
