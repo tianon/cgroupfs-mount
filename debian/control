@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Tianon Gravi <admwiggin@gmail.com>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://github.com/tianon/cgroupfs-mount
 Vcs-Git: git://github.com/tianon/cgroupfs-mount.git
 Vcs-Browser: https://github.com/tianon/cgroupfs-mount
