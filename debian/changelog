@@ -2,6 +2,7 @@ cgroupfs-mount (1.2) UNRELEASED; urgency=medium
 
   * Added "Multi-Arch: foreign" to allow us to satisfy "cgroupfs-mount"
     dependencies on other architectures too (Closes: #776042).
+  * Relax "mountall" Depends to Suggests (Closes: #783143).
 
  -- Tianon Gravi <admwiggin@gmail.com>  Mon, 26 Jan 2015 19:20:41 +0000
 
