@@ -1,3 +1,9 @@
+cgroupfs-mount (1.3) UNRELEASED; urgency=medium
+
+  * Added a simple manpage.
+
+ -- Tianon Gravi <admwiggin@gmail.com>  Thu, 16 Jul 2015 22:19:37 +0000
+
 cgroupfs-mount (1.2) unstable; urgency=medium
 
   * Added "Multi-Arch: foreign" to allow us to satisfy "cgroupfs-mount"

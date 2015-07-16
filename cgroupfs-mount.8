@@ -1,0 +1,45 @@
+.\" TASTY
+.TH CGROUPFS-MOUNT 8
+.SH NAME
+cgroupfs-mount, cgroupfs-umount \- set up cgroupfs mount hierarchies
+.SH SYNOPSIS
+Control groups are a kernel mechanism for tracking and imposing limits on resource usage on groups of tasks.
+These scripts mount and unmount the hierarchies for managing them.
+.PP
+.B cgroupfs-mount
+.LP
+.B cgroupfs-umount
+.SH DESCRIPTION
+The location for the mounts these scripts create is
+.IR /sys/fs/cgroup ,
+which is widely regarded as "the place" for these to be mounted (for example,
+.BR systemd
+mounts them here as well).
+.SH "RETURN VALUE"
+Zero for success or if it is determined that we can or should not mount, due to user entries in
+.IR /etc/fstab
+or pre-existing mounts.
+Non-zero for explicit failures.
+.SH "CAVEATS & DIAGNOSTICS"
+It is critically important for the proper operation of these scripts that you do not manually include any cgroup mount points in
+.IR /etc/fstab .
+After commenting out any extraneous cgroup entries in
+.IR /etc/fstab ,
+you should either reboot or manually
+.BR umount
+them and then run
+.BR cgroupfs-mount
+again.
+.SH RESTRICTIONS
+These scripts intentionally do not do any cgroup management or classification of tasks into cgroups.
+They are also very intentionally light on configurability (to the point of non-existence) to keep the implementation simple and less error-prone.
+.SH AUTHORS
+Serge Hallyn and Tianon Gravi
+.SH HISTORY
+This package was originally derived from the
+.BR cgroup-lite
+package from Ubuntu.
+.SH "SEE ALSO"
+.BR mount (8),
+.BR fstab (5),
+.BR systemd (1)
