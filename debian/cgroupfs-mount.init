@@ -13,7 +13,7 @@ set -e
 #  limits on resource usage on groups of tasks.
 ### END INIT INFO
 
-BASE=$(basename $0)
+BASE=cgroupfs-mount
 
 # Test for systemd and bail (we have to test before sourcing init-functions, or systemd hijacks us)
 # We bail because systemd already mounts cgroups sanely, so we just silently pretend we were successful in mounting them here

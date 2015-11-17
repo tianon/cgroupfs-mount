@@ -1,6 +1,7 @@
 cgroupfs-mount (1.3) UNRELEASED; urgency=medium
 
   * Added a simple manpage.
+  * Switch init script to use "BASE=cgroupfs-mount" (Closes: #804795).
 
  -- Tianon Gravi <admwiggin@gmail.com>  Thu, 16 Jul 2015 22:19:37 +0000
 
