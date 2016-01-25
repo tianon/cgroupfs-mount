@@ -1,1 +1,5 @@
 usr/share/man/man8/cgroupfs-mount.8.gz usr/share/man/man8/cgroupfs-umount.8.gz
+
+# http://0pointer.de/blog/projects/three-levels-of-off
+# "mask" the cgroupfs-mount service in systemd
+/dev/null lib/systemd/system/cgroupfs-mount.service
