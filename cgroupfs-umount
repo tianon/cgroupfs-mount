@@ -2,7 +2,7 @@
 # Copyright 2011 Canonical, Inc
 #           2014 Tianon Gravi
 # Author: Serge Hallyn <serge.hallyn@canonical.com>
-#         Tianon Gravi <admwiggin@gmail.com>
+#         Tianon Gravi <tianon@debian.org>
 set -e
 
 # we don't care to move tasks around gratuitously - just umount the cgroups

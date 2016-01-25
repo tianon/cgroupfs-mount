@@ -5,7 +5,7 @@ Comment: based on Ubuntu's cgroup-lite, with permission:
 
 Files: *
 Copyright: 2012 Serge Hallyn <serge.hallyn@ubuntu.com>
-           2014 Tianon Gravi <admwiggin@gmail.com>
+           2014 Tianon Gravi <tianon@debian.org>
 License: GPL-3+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

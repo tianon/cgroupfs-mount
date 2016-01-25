@@ -1,7 +1,7 @@
 Source: cgroupfs-mount
 Section: admin
 Priority: optional
-Maintainer: Tianon Gravi <admwiggin@gmail.com>
+Maintainer: Tianon Gravi <tianon@debian.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: https://github.com/tianon/cgroupfs-mount
