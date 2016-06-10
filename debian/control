@@ -12,7 +12,6 @@ Package: cgroupfs-mount
 Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}
-Suggests: mountall (>> 2.48~)
 Description: Light-weight package to set up cgroupfs mounts
  Control groups are a kernel mechanism for tracking and imposing
  limits on resource usage on groups of tasks.
