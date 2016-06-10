@@ -1,4 +1,4 @@
-cgroupfs-mount (1.3) UNRELEASED; urgency=medium
+cgroupfs-mount (1.3) unstable; urgency=medium
 
   * Added a simple manpage.
   * Switch init script to use "BASE=cgroupfs-mount" (Closes: #804795).
@@ -6,7 +6,7 @@ cgroupfs-mount (1.3) UNRELEASED; urgency=medium
     (Closes: #812357).
   * Remove upstart (#808289) including "Suggests: mountall" (Closes: #826726)
 
- -- Tianon Gravi <tianon@debian.org>  Thu, 16 Jul 2015 22:19:37 +0000
+ -- Tianon Gravi <tianon@debian.org>  Fri, 10 Jun 2016 07:47:40 -0700
 
 cgroupfs-mount (1.2) unstable; urgency=medium
 
