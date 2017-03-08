@@ -2,6 +2,7 @@ cgroupfs-mount (1.4) UNRELEASED; urgency=medium
 
   * Add a short blurb about installation in README.md
   * Use https for Vcs-Git
+  * Add lsb-base to Depends (init.d-script-needs-depends-on-lsb-base)
 
  -- Tianon Gravi <tianon@debian.org>  Sat, 03 Sep 2016 16:48:21 -0700
 
