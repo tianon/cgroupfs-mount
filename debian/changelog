@@ -1,4 +1,4 @@
-cgroupfs-mount (1.4) UNRELEASED; urgency=medium
+cgroupfs-mount (1.4) unstable; urgency=medium
 
   * Add a short blurb about installation in README.md
   * Use https for Vcs-Git
@@ -6,7 +6,7 @@ cgroupfs-mount (1.4) UNRELEASED; urgency=medium
   * Properly remove /etc/init/cgroupfs-mount.conf (upstart script) from old
     installs (Closes: #834815)
 
- -- Tianon Gravi <tianon@debian.org>  Sat, 03 Sep 2016 16:48:21 -0700
+ -- Tianon Gravi <tianon@debian.org>  Wed, 08 Mar 2017 14:05:14 -0800
 
 cgroupfs-mount (1.3) unstable; urgency=medium
 
