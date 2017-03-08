@@ -5,7 +5,7 @@ Maintainer: Tianon Gravi <tianon@debian.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: https://github.com/tianon/cgroupfs-mount
-Vcs-Git: git://github.com/tianon/cgroupfs-mount.git
+Vcs-Git: https://github.com/tianon/cgroupfs-mount.git
 Vcs-Browser: https://github.com/tianon/cgroupfs-mount
 
 Package: cgroupfs-mount
