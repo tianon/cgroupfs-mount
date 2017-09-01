@@ -18,7 +18,7 @@ If you're using `systemd` as your init system, you do not need this, as
 For Debian users, simply `apt-get install cgroupfs-mount`.
 
 If you're on Ubuntu 14.04 (Trusty), you should simply use `cgroup-lite` instead
-(the equivilant package this one was based upon).
+(the equivalent package this one was based upon).
 
 If you're on Ubuntu 16.04 (Xenial) or later, you're likely using `systemd`
 already, and thus are unlikely to need this package.
