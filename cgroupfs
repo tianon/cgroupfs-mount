@@ -12,7 +12,7 @@
 # Required-Stop:
 # Should-Start:
 # Should-Stop:
-# Default-Start: 0 6
+# Default-Start:
 # Default-Stop:
 # Short-Description:
 # Description:
