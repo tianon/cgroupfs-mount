@@ -45,7 +45,7 @@ Release = 6.x:
 
 	Usage:  sudo service cgroupfs [start|stop|restart|status]
 
-	These scripts run these commands with/without sudo prefix:
+	These scripts run the following commands with/without sudo prefix:
 
 	sudo chmod 755 cgroupfs cgroupfs-mount cgroupfs-umount
 	sudo cp -p cgroupfs-mount  /etc/cgroupfs-mount
