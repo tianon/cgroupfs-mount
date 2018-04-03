@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# cgroupfs for Oracle Linux 6 
+# cgroupfs for Oracle Linux 6 and similar non-systemd linuxes
 #
 # chkconfig:   345 10 93
 # description: cgroupfs script
