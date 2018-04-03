@@ -29,7 +29,7 @@ Release >= 16.04:
 
 	Do not install this package.  Ubuntu 16.04 uses systemd and does not need this package.
 
-For RedHat-family:
+For RedHat-family non-systemd linuxes:
 
 Release = 6.x: 
 
