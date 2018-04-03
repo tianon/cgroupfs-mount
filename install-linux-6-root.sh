@@ -6,4 +6,4 @@ cp -p cgroupfs-umount /etc/cgroupfs-umount
 cp -p cgroupfs /etc/cgroupfs
 chkconfig --add cgroupfs
 chkconfig cgroupfs on --level 345
-chkconfig --list
+chkconfig --list cgroupfs

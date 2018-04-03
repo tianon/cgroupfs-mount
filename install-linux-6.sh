@@ -6,4 +6,4 @@ sudo cp -p cgroupfs-umount /etc/cgroupfs-umount
 sudo cp -p cgroupfs /etc/cgroupfs
 sudo chkconfig --add cgroupfs
 sudo chkconfig cgroupfs on --level 345
-sudo chkconfig --list
+sudo chkconfig --list cgroupfs
