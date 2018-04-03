@@ -55,7 +55,7 @@ Release = 6.x:
 	sudo chkconfig cgroupfs on --level 345
 	sudo chkconfig --list
 
-For Other non-Debian non-RedHat Linux Architectures:
+For Other non-Debian and non-RedHat Linux Architectures:
 
 If you're on some other distribution, either look for a similar package in your
 distribution's packages or clone these scripts and ensure that the `cgroupfs-mount`
