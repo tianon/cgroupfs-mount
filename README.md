@@ -43,23 +43,23 @@ Release = 6.x:
 
 		./install-linux-6-root.sh
 
-	Usage:  sudo service cgroupfs [start|stop|restart|status]
+	Usage: sudo service cgroupfs [start|stop|restart|status]
 
 	These scripts run the following commands with/without sudo prefix:
 
 	sudo chmod 755 cgroupfs cgroupfs-mount cgroupfs-umount
 	sudo cp -p cgroupfs-mount  /etc/cgroupfs-mount
 	sudo cp -p cgroupfs-umount /etc/cgroupfs-umount
-	sudo cp -p cgroupfs /etc/cgroupfs
+	sudo cp -p cgroupfs /etc/init.d/cgroupfs
 	sudo chkconfig --add cgroupfs
-	sudo chkconfig --level 345 cgroupfs
+	sudo chkconfig cgroupfs on --level 345
 	sudo chkconfig --list
 
-For Other Linux Architectures:
+For Other non-Debian non-RedHat Linux Architectures:
 
 If you're on some other distribution, either look for a similar package in your
-distribution's packages or clone these scripts and ensure that the
-`cgroupfs-mount` script is somehow invoked during system startup.
+distribution's packages or clone these scripts and ensure that the `cgroupfs-mount`
+script is somehow invoked during system startup.
 
 ## Troubleshooting
 
