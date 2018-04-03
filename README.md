@@ -15,7 +15,7 @@ If you're using `systemd` as your init system, you do not need this, as
 
 ## How do I install this?
 
-For Debian-family:
+For Debian-family non-systemd:
 
 Release = 14.04:
 
@@ -27,9 +27,9 @@ Release > 14.04:
 
 Release >= 16.04:
 
-	Do not install this package.  Ubuntu 16.04 uses systemd and does not need this package.
+	Do NOT install this package.  Ubuntu 16.04 uses systemd and does NOT need this package.
 
-For RedHat-family non-systemd linuxes:
+For RedHat-family non-systemd:
 
 Release = 6.x: 
 
