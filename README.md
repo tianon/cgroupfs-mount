@@ -15,13 +15,45 @@ If you're using `systemd` as your init system, you do not need this, as
 
 ## How do I install this?
 
-For Debian users, simply `apt-get install cgroupfs-mount`.
+For Debian-family:
 
-If you're on Ubuntu 14.04 (Trusty), you should simply use `cgroup-lite` instead
-(the equivalent package this one was based upon).
+Release = 14.04:
 
-If you're on Ubuntu 16.04 (Xenial) or later, you're likely using `systemd`
-already, and thus are unlikely to need this package.
+	Do not install this package, instead use: "apt-get install cgroup-lite"
+
+Release > 14.04:
+
+	Install this package:  "apt-get install cgroupfs-mount"
+
+Release >= 16.04:
+
+	Do not install this package.  Ubuntu 16.04 uses systemd and does not need this package.
+
+For RedHat-family:
+
+Release = 6.x: 
+
+	(tested on Oracle Linux 6.9):
+	
+	Installing as non-root user with SUDO ALL privileges:
+
+		./install-linux-6.sh
+
+	Installing as root user:
+
+		./install-linux-6-root.sh
+
+	These scripts run these commands with/without sudo prefix:
+
+	sudo chmod 755 cgroupfs cgroupfs-mount cgroupfs-umount
+	sudo cp -p cgroupfs-mount  /etc/cgroupfs-mount
+	sudo cp -p cgroupfs-umount /etc/cgroupfs-umount
+	sudo cp -p cgroupfs /etc/cgroupfs
+	sudo chkconfig --add cgroupfs
+	sudo chkconfig --level 345 cgroupfs
+	sudo chkconfig --list
+
+For Other Linux Architectures:
 
 If you're on some other distribution, either look for a similar package in your
 distribution's packages or clone these scripts and ensure that the

@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# cgroupfs for Oracle Linux 6 
+#
+# chkconfig:   345 10 93
+# description: cgroupfs script
+#
+
+### BEGIN INIT INFO
+# Provides:
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Should-Stop:
+# Default-Start: 0 6
+# Default-Stop:
+# Short-Description:
+# Description:
+### END INIT INFO
+
+# Source function library.
+
+start() {
+    /etc/cgroupfs-mount
+}
+
+stop() {
+    /etc/cgroupfs-umount
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+        start
+        $1
+        ;;
+    stop)
+        stop
+        $1
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 2
+esac
+exit $?
+
