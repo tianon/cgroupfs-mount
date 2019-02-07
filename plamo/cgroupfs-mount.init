@@ -1,0 +1,71 @@
+#!/bin/sh
+set -e
+
+### BEGIN INIT INFO
+# Provides:           cgroupfs-mount
+# Required-Start:     $syslog $remote_fs
+# Required-Stop:      $syslog $remote_fs
+# Default-Start:      2 3 4 5
+# Default-Stop:       0 1 6
+# Short-Description:  Set up cgroupfs mounts.
+# Description:
+#  Control groups are a kernel mechanism for tracking and imposing
+#  limits on resource usage on groups of tasks.
+### END INIT INFO
+
+BASE=cgroupfs-mount
+
+# Test for systemd and bail (we have to test before sourcing init-functions, or systemd hijacks us)
+# We bail because systemd already mounts cgroups sanely, so we just silently pretend we were successful in mounting them here
+if [ -d /run/systemd/system ]; then
+	exit 0
+fi
+
+# Get lsb functions
+. /lib/lsb/init-functions
+
+if [ -f /etc/sysconfig/$BASE ]; then
+	. /etc/sysconfig/$BASE
+fi
+
+case "$1" in
+	start)
+		test -x /usr/bin/cgroupfs-mount || exit 0
+		log_info_msg 'Mounting cgroupfs hierarchy'
+		UNPRIV_USERS="$UNPRIV_USERS" \
+			/usr/bin/cgroupfs-mount
+		evaluate_retval
+		;;
+
+	stop)
+		test -x /usr/bin/cgroupfs-umount || exit 0
+		log_info_msg 'Unmounting cgroupfs hierarchy'
+		/usr/bin/cgroupfs-umount
+		evaluate_retval
+		;;
+
+	restart|force-reload)
+		if mountpoint -q /sys/fs/cgroup; then
+			$0 stop
+		fi
+		exec $0 start
+		;;
+
+	status)
+		if mountpoint -q /sys/fs/cgroup; then
+			# TODO decide whether to detect "partial mounted" status (ie, whether all available subsystems are mounted correctly)
+			log_success_msg 'cgroupfs hierarchy is mounted'
+			exit 0
+		else
+			log_failure_msg 'cgroupfs hierarchy is not mounted'
+			exit 1
+		fi
+		;;
+
+	*)
+		echo "Usage: $0 {start|stop|restart|status}"
+		exit 1
+		;;
+esac
+
+exit 0

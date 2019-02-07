@@ -1,0 +1,2 @@
+# List of non-root users who want to create owned cgroups
+UNPRIV_USERS=""

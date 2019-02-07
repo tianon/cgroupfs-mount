@@ -37,6 +37,18 @@ for sys in $(awk '!/^#/ { if ($4 == 1) print $1 }' /proc/cgroups); do
 	if ! mountpoint -q $sys; then
 		if ! mount -n -t cgroup -o $sys cgroup $sys; then
 			rmdir $sys || true
+		else
+			for u in $UNPRIV_USERS
+			do
+				mkdir $sys/$u
+				chown $u $sys/$u
+				chown $u $sys/$u/{cgroup.procs,tasks}
+				echo 1 > $sys/$u/cgroup.clone_children
+				if [ $sys == "cpuset" ]; then
+					echo 0 > $sys/$u/cpuset.cpus
+					echo 0 > $sys/$u/cpuset.mems
+				fi
+			done
 		fi
 	fi
 done
