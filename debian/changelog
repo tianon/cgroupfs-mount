@@ -1,3 +1,9 @@
+cgroupfs-mount (1.5) UNRELEASED; urgency=medium
+
+  * Use secure copyright file specification URI.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Thu, 31 Oct 2019 17:36:19 +0000
+
 cgroupfs-mount (1.4) unstable; urgency=medium
 
   * Add a short blurb about installation in README.md
