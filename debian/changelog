@@ -1,6 +1,7 @@
 cgroupfs-mount (1.5) UNRELEASED; urgency=medium
 
   * Use secure copyright file specification URI.
+  * Bump debhelper from old 9 to 12.
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 31 Oct 2019 17:36:19 +0000
 
