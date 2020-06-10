@@ -51,4 +51,11 @@ done
 #  freezer	7	3	1
 #  blkio	8	3	1
 
+# enable cgroups memory hierarchy, like systemd does (and lxc/docker desires)
+# https://github.com/systemd/systemd/blob/v245/src/core/cgroup.c#L2983
+# https://bugs.debian.org/940713
+if [ -e /sys/fs/cgroup/memory/memory.use_hierarchy ]; then
+	echo 1 > /sys/fs/cgroup/memory/memory.use_hierarchy
+fi
+
 exit 0
