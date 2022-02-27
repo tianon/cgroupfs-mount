@@ -20,11 +20,14 @@ fi
 cd /sys/fs/cgroup
 
 for sys in *; do
-	if mountpoint -q $sys; then
-		umount $sys
-	fi
-	if [ -d $sys ]; then
-		rmdir $sys || true
+	# Solves https://bugs.debian.org/950986
+	if grep -q $sys /proc/cgroups 2>/dev/null || [ $sys = 'systemd' ]; then
+		if mountpoint -q $sys; then
+			umount $sys
+		fi
+		if [ -d $sys ]; then
+			rmdir $sys || true
+		fi
 	fi
 done
 

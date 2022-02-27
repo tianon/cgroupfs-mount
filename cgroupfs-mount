@@ -41,6 +41,16 @@ for sys in $(awk '!/^#/ { if ($4 == 1) print $1 }' /proc/cgroups); do
 	fi
 done
 
+# Create systemd cgroup if not present
+# https://bugs.devuan.org/426
+# https://bugs.debian.org/939435
+mkdir -p systemd
+if ! mountpoint -q systemd; then
+	if ! mount -n -t cgroup -o none,name=systemd cgroup systemd; then
+		rmdir systemd || true
+	fi
+fi
+
 # example /proc/cgroups:
 #  #subsys_name	hierarchy	num_cgroups	enabled
 #  cpuset	2	3	1
