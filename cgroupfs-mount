@@ -41,6 +41,25 @@ for sys in $(awk '!/^#/ { if ($4 == 1) print $1 }' /proc/cgroups); do
 	fi
 done
 
+if [ -f /etc/centos-release ]
+then
+	function CheckCentOS {
+		cat /etc/centos-release | sed 's/ Linux//' | cut -f1 -d'.' | rev | cut -f1 -d' '
+	}
+	CentOS=$(CheckCentOS)
+
+	function CheckKernelVersion  {
+		uname -r | cut -f1,5 -d'.' | sed 's/\.//'
+	}
+	KernelVersion=$(CheckKernelVersion)
+
+	if [ $CentOS -eq 6 ] && [ $KernelVersion = '4elrepo' ]
+	then
+		mkdir -p /sys/fs/cgroup/systemd
+		mount -t cgroup -o none,name=systemd systemd /sys/fs/cgroup/systemd
+	fi
+fi
+
 # example /proc/cgroups:
 #  #subsys_name	hierarchy	num_cgroups	enabled
 #  cpuset	2	3	1
